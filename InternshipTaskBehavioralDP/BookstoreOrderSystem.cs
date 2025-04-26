@@ -27,10 +27,8 @@ public class BookstoreOrderSystem
         {
             var order = new Order(_nextOrderId++, customerName, bookTitle);
             
-            foreach (var customer in _customers)
-            {
-                order.RegisterObserver(customer);
-            }
+            var orderingCustomer = _customers.Find(c => c.Name == customerName);
+            if (orderingCustomer != null) order.RegisterObserver(orderingCustomer);
             
             foreach (var staffMember in _staff)
             {
