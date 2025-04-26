@@ -2,11 +2,11 @@
 
 var bookstore = new BookstoreOrderSystem();
 
-var john = bookstore.RegisterCustomer("John Smith", NotificationType.Email);
-var mary = bookstore.RegisterCustomer("Mary Johnson", NotificationType.Sms);
+bookstore.RegisterCustomer("John Smith", NotificationType.Email);
+bookstore.RegisterCustomer("Mary Johnson", NotificationType.Sms);
             
 var orderProcessor = bookstore.AddStaffMember("Bob Wilson", DepartmentType.Orders);
-var shippingStaff = bookstore.AddStaffMember("Alice Brown", DepartmentType.Shipping);
+bookstore.AddStaffMember("Alice Brown", DepartmentType.Shipping);
             
 var order1 = bookstore.PlaceOrder("John Smith", "Design Patterns: Elements of Reusable Object-Oriented Software");
 order1.UpdateStatus(OrderStatus.Processing);
